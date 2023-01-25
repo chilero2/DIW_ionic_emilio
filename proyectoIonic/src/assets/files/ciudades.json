@@ -1,16 +1,22 @@
 {
     "data": [
         {
+            "id": 1,
             "name": "Valencia",
-            "image": "valencia.jpg"
+            "image": "valencia.jpg",
+            "desc": "Prueba ciudad"
         },
         {
+            "id": 2,
             "name": "Castellón",
-            "image": "castellon.jpg"
+            "image": "castellon.jpg",
+            "desc": "Prueba ciudad"
         },
         {
+            "id": 2,
             "name": "Alicante",
-            "image": "alicante.jpg"
+            "image": "alicante.jpg",
+            "desc": "Prueba ciudad"
         }
     ]
 }

@@ -11,6 +11,7 @@ import { AlertController, ToastController } from '@ionic/angular';
 })
 export class CiudadesPage implements OnInit {
   ciudades: any = [];
+  searchCiudades: any = []
 
   constructor(
     private router: Router,
@@ -20,7 +21,11 @@ export class CiudadesPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getCiudades().subscribe((res) => (this.ciudades = res));
+    this.getCiudades().subscribe((res) => {
+      this.ciudades = res
+      this.searchCiudades = res
+    });
+
   }
 
   getCiudades() {
@@ -83,5 +88,15 @@ export class CiudadesPage implements OnInit {
     });
 
     await alert.present();
+  }
+
+  buscadorCiudades(event: any) {
+    const text = event.target.value
+    this.searchCiudades = this.ciudades
+    if(text && text.trim() != '') {
+      this.searchCiudades = this.searchCiudades.filter((ciudades:any) => {
+        return ciudades.name.toLowerCase().indexOf(text.toLowerCase()) > -1
+      })
+    }
   }
 }
